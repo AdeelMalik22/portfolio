@@ -10,6 +10,7 @@ body {
     color: #e0e0e0;
     background: #000;
     line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 /* ----------------- NAVBAR ----------------- */
@@ -37,6 +38,50 @@ body {
     gap: 25px;
 }
 
+/* MOBILE DROPDOWN ANIMATION */
+.nav-menu {
+    overflow: hidden;
+    max-height: none;
+    transition: none;
+}
+
+@media (max-width: 900px) {
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10%;
+        width: 180px;
+        background: #111;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        max-height: 0;             /* hidden initially */
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        padding: 0;
+    }
+
+    .nav-menu.active {
+        max-height: 500px;        /* show all items */
+        padding: 10px 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #fff;
+    }
+}
+
+/* ----------------- NAV LINKS ----------------- */
 .nav-menu a {
     text-decoration: none;
     color: #ccc;
@@ -45,14 +90,6 @@ body {
 }
 
 .nav-menu a:hover {
-    color: #fff;
-}
-
-/* Hamburger icon */
-.hamburger {
-    display: none;
-    font-size: 1.8rem;
-    cursor: pointer;
     color: #fff;
 }
 
@@ -202,33 +239,6 @@ section h2 {
 
 /* ----------------- MOBILE ----------------- */
 @media (max-width: 900px) {
-    .hamburger {
-        display: block;
-    }
-
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 10%;
-        flex-direction: column;
-        background: #111;
-        border-radius: 8px;
-        padding: 10px 0;
-        width: 180px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    }
-
-    .nav-menu.active {
-        display: flex;
-    }
-
-    .nav-menu li {
-        width: 100%;
-        text-align: center;
-        margin: 10px 0;
-    }
-
     .hero {
         flex-direction: column-reverse;
         text-align: center;

@@ -132,7 +132,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2025 Adeel — Backend Developer</p>
+        <p>© 2025 Adeel — All Rights are Reseverd</p>
     </footer>
 
     <!-- JS for Hamburger Menu -->
@@ -140,19 +140,16 @@
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
 
-        // Toggle menu on hamburger click
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
 
-        // Close menu when clicking a nav link
         document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
                 navMenu.classList.remove('active');
             });
         });
 
-        // Optional: Close menu when clicking outside navbar
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
