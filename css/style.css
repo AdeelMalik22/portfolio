@@ -1,4 +1,4 @@
-/* RESET */
+/* ----------------- RESET ----------------- */
 * {
     margin: 0;
     padding: 0;
@@ -7,45 +7,49 @@
 
 body {
     font-family: "Inter", sans-serif;
-    color: #e0e0e0;
-    background: #000;
+    color: #e0e0e0; /* light text on black */
+    background: #000; /* black background */
     line-height: 1.6;
 }
 
-/* NAVBAR */
+/* ----------------- NAVBAR ----------------- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 10%;
-    background: #111;
+    background: #111; /* black navbar */
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .nav-logo {
     font-size: 1.6rem;
     font-weight: 700;
+    color: #fff;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 25px;
+    justify-content: flex-end;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: #ccc;
     font-weight: 500;
+    transition: 0.3s;
 }
 
 .nav-menu a:hover {
     color: #fff;
 }
 
-/* HERO SECTION */
+/* ----------------- HERO SECTION ----------------- */
 .hero {
     display: flex;
     align-items: center;
@@ -62,6 +66,7 @@ body {
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .hero-left p {
@@ -70,21 +75,20 @@ body {
     font-size: 1.1rem;
 }
 
-/* BUTTON */
 .primary-btn {
     padding: 10px 28px;
-    background: white;
+    background: #fff;
     color: #111;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
+    transition: 0.3s;
 }
 
 .primary-btn:hover {
     background: #e0e0e0;
 }
 
-/* IMAGE FIX */
 .hero-right img {
     width: 280px;
     height: auto;
@@ -95,7 +99,7 @@ body {
     display: block;
 }
 
-/* SECTIONS */
+/* ----------------- SECTIONS ----------------- */
 section {
     padding: 80px 10%;
 }
@@ -103,9 +107,10 @@ section {
 section h2 {
     font-size: 2.3rem;
     margin-bottom: 30px;
+    color: #fff;
 }
 
-/* SKILLS */
+/* ----------------- SKILLS ----------------- */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -128,9 +133,10 @@ section h2 {
 
 .skill-icon {
     font-size: 2.2rem;
+    color: #00bfff; /* sky-blue icons for contrast */
 }
 
-/* PROJECTS */
+/* ----------------- PROJECTS ----------------- */
 .projects {
     background: #111;
 }
@@ -145,23 +151,49 @@ section h2 {
     background: #1a1a1a;
     padding: 25px;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
-/* CONTACT */
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech-stack {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #00bfff;
+}
+
+/* ----------------- CONTACT ----------------- */
 .contact {
     text-align: center;
 }
 
-/* FOOTER */
+.contact p {
+    margin-bottom: 15px;
+}
+
+.contact .primary-btn {
+    background: #00bfff;
+    color: #fff;
+}
+
+.contact .primary-btn:hover {
+    background: #1e90ff;
+}
+
+/* ----------------- FOOTER ----------------- */
 .footer {
     background: #111;
     text-align: center;
     padding: 20px;
     color: #ccc;
     margin-top: 40px;
+    font-weight: 500;
 }
 
-/* --------- MOBILE FIXES --------- */
+/* ----------------- MOBILE FIXES ----------------- */
 @media (max-width: 900px) {
     .hero {
         flex-direction: column-reverse;
@@ -175,7 +207,11 @@ section h2 {
     }
 
     .nav-menu {
-        display: none; /* optional: hide on mobile */
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+        justify-content: center; /* center links on mobile */
     }
 
     .hero-left h1 {
