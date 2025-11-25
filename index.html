@@ -137,24 +137,39 @@
 
     <!-- JS for Hamburger Menu -->
     <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+// Toggle menu on hamburger click
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
 
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                navMenu.classList.remove('active');
-            });
-        });
+// Smooth scroll when clicking nav links on mobile
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // prevent instant jump
 
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
-            }
-        });
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+
+        // Close menu first
+        navMenu.classList.remove('active');
+
+        // Wait for menu to finish closing (slide-up animation)
+        setTimeout(() => {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }, 300); // match with your CSS transition time (0.5s = 500ms)
+    });
+});
+
+// Optional: Close menu when clicking outside navbar
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove('active');
+    }
+});
+
     </script>
 
 </body>
