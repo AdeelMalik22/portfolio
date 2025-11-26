@@ -228,14 +228,33 @@ section h2 {
 }
 
 /* ----------------- FOOTER ----------------- */
+/* Footer */
 .footer {
-    background: #111;
     text-align: center;
-    padding: 20px;
-    color: #ccc;
-    margin-top: 40px;
-    font-weight: 500;
+    padding: 30px 0;
+    background: #111;
+    color: #fff;
+    margin-top: 60px;
 }
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 30px;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #888;
+    transform: scale(1.2);
+}
+
 
 /* ----------------- MOBILE ----------------- */
 @media (max-width: 900px) {
