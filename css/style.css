@@ -229,6 +229,7 @@ section h2 {
 
 /* ----------------- FOOTER ----------------- */
 /* Footer */
+/* Footer */
 .footer {
     text-align: center;
     padding: 30px 0;
@@ -237,23 +238,39 @@ section h2 {
     margin-top: 60px;
 }
 
+/* Social icons wrapper */
 .social-links {
     margin-top: 15px;
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 25px; /* desktop spacing */
 }
 
-.social-links a {
+/* Icons */
+social-links a {
     color: white;
     font-size: 30px;
     transition: 0.3s ease;
 }
 
+/* Hover effect */
 .social-links a:hover {
     color: #888;
     transform: scale(1.2);
 }
+
+/* ✅ MOBILE FIX — increase space + prevent touching */
+@media (max-width: 480px) {
+    .social-links {
+        gap: 40px;          /* more space between icons */
+        margin-top: 20px;
+    }
+
+    .social-links a {
+        font-size: 34px;    /* slightly bigger icons */
+    }
+}
+
 
 
 /* ----------------- MOBILE ----------------- */
