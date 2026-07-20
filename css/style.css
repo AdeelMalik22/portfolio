@@ -151,9 +151,9 @@ button {
 
 .hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.42fr) minmax(300px, 0.58fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(380px, 0.7fr);
     align-items: center;
-    gap: clamp(48px, 8vw, 132px);
+    gap: clamp(48px, 5vw, 80px);
     min-height: min(850px, calc(100vh - 77px));
     padding: 82px 0 82px;
 }
@@ -290,64 +290,27 @@ button {
 }
 
 .profile-panel {
-    max-width: 340px;
+    width: 100%;
+    max-width: 430px;
     justify-self: end;
 }
 
 .portrait-wrap {
-    position: relative;
-    height: clamp(355px, 39vw, 487px);
-    overflow: hidden;
-    border: 1px solid #393939;
-    background: #e6e6e0;
-}
-
-.portrait-wrap::before {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.7));
-    content: '';
-    pointer-events: none;
-}
-
-.portrait-grid {
-    position: absolute;
-    z-index: 2;
-    inset: 0;
-    opacity: 0.32;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.4) 1px, transparent 1px);
-    background-size: 25% 25%;
-    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    max-height: 560px;
 }
 
 .portrait-wrap img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
+    height: auto;
+    max-height: 560px;
+    object-fit: contain;
+    object-position: center bottom;
     filter: grayscale(1) contrast(1.12);
-}
-
-.portrait-label {
-    position: absolute;
-    z-index: 3;
-    right: 18px;
-    bottom: 16px;
-    color: var(--white);
-    font-family: var(--mono);
-    font-size: 0.72rem;
-    line-height: 1.55;
-    text-align: right;
-}
-
-.portrait-label span {
-    color: #c7c7c7;
-    font-size: 0.62rem;
+    mix-blend-mode: screen;
 }
 
 .profile-details {
@@ -624,12 +587,12 @@ button {
 .featured-project {
     grid-column: span 2;
     min-height: 325px;
-    background: var(--white);
-    color: var(--black);
+    background: var(--black);
+    color: var(--white);
 }
 
 .featured-project:hover {
-    background: #dadad6;
+    background: #171717;
 }
 
 .project-topline {
@@ -638,7 +601,7 @@ button {
 }
 
 .featured-project .project-topline {
-    color: #656565;
+    color: #747474;
 }
 
 .project-card h3 {
@@ -659,7 +622,7 @@ button {
 }
 
 .featured-project p {
-    color: #515151;
+    color: #9c9c9c;
     font-size: 0.89rem;
 }
 
@@ -671,8 +634,8 @@ button {
 }
 
 .featured-project .project-tech span {
-    border-color: #999;
-    color: #323232;
+    border-color: #3d3d3d;
+    color: #c6c6c6;
 }
 
 .learning {
@@ -902,14 +865,15 @@ button {
 
     .profile-panel {
         display: grid;
-        grid-template-columns: 240px 1fr;
+        grid-template-columns: 270px 1fr;
         gap: 25px;
         max-width: none;
         justify-self: stretch;
     }
 
     .portrait-wrap {
-        height: 300px;
+        width: 270px;
+        max-height: none;
     }
 
     .profile-details {
@@ -961,7 +925,8 @@ button {
     }
 
     .portrait-wrap {
-        height: min(117vw, 465px);
+        width: min(100%, 340px);
+        margin: 0 auto;
     }
 
     .profile-details {
